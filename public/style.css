@@ -436,9 +436,7 @@ select {
     content: "🌱 ";
 }
 
-.contact::before {
-    content: "📞 ";
-}
+
 
 
 /* =========================
