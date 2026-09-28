@@ -1,0 +1,1069 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700;800&display=swap');
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Prompt', sans-serif;
+    line-height: 1.6;
+    color: #5a4a4a;
+    background: #fff8f5;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button,
+input,
+select {
+    font-family: inherit;
+}
+
+
+/* =========================
+   🌈 COLOR THEME
+========================= */
+
+:root {
+    --pink: #ff8fab;
+    --pink-dark: #ff6f91;
+    --pink-light: #ffe4ec;
+
+    --yellow: #ffd166;
+    --yellow-light: #fff3c4;
+
+    --orange: #ff9f68;
+    --orange-dark: #f47c48;
+
+    --purple: #b8a0ff;
+    --purple-light: #eee8ff;
+
+    --green: #8fd694;
+    --green-dark: #63b66a;
+
+    --cream: #fff8f5;
+    --white: #ffffff;
+
+    --text: #5a4a4a;
+    --text-light: #8b7b7b;
+
+    --shadow: 0 8px 25px rgba(255, 143, 171, 0.15);
+    --shadow-hover: 0 14px 30px rgba(255, 143, 171, 0.25);
+}
+
+
+/* =========================
+   🎀 NAVBAR
+========================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    background: linear-gradient(
+        90deg,
+        #ff8fab,
+        #ff9f68,
+        #ffd166
+    );
+
+    color: white;
+    padding: 15px 50px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-shadow: 0 4px 15px rgba(255, 111, 145, 0.2);
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+    color: white;
+    letter-spacing: 0.5px;
+
+    text-shadow: 2px 2px 0 rgba(0,0,0,0.08);
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    list-style: none;
+}
+
+.menu a {
+    display: inline-block;
+
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+
+    padding: 8px 15px;
+    border-radius: 20px;
+
+    transition: 0.25s ease;
+}
+
+.menu a:hover {
+    background: rgba(255,255,255,0.25);
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   🌸 HERO
+========================= */
+
+.hero {
+    max-width: 1150px;
+    margin: 35px auto;
+
+    padding: 0 25px;
+
+    display: flex;
+    align-items: center;
+    gap: 45px;
+
+    min-height: 430px;
+}
+
+.hero-img {
+    width: 50%;
+    height: 400px;
+
+    object-fit: cover;
+
+    border-radius: 30px;
+
+    border: 8px solid white;
+
+    box-shadow: var(--shadow);
+}
+
+.hero-text {
+    width: 50%;
+    color: var(--text);
+}
+
+.hero-text h1 {
+    font-size: 42px;
+    line-height: 1.3;
+
+    color: var(--pink-dark);
+
+    margin-bottom: 18px;
+
+    font-weight: 800;
+}
+
+.hero-text h1::after {
+    content: " ✨";
+}
+
+.hero-text p {
+    font-size: 17px;
+    line-height: 1.9;
+
+    color: var(--text-light);
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   🎀 BUTTON
+========================= */
+
+.btn {
+    display: inline-block;
+
+    background: linear-gradient(
+        135deg,
+        var(--pink),
+        var(--orange)
+    );
+
+    color: white;
+
+    padding: 12px 25px;
+
+    border-radius: 25px;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    border: 3px solid white;
+
+    box-shadow: 0 5px 15px rgba(255, 143, 171, 0.3);
+
+    transition: 0.25s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px) scale(1.03);
+
+    box-shadow: 0 9px 20px rgba(255, 143, 171, 0.35);
+}
+
+
+/* =========================
+   🍓 PRODUCT SECTION
+========================= */
+
+.cards-section {
+    max-width: 1200px;
+
+    margin: 50px auto;
+
+    padding: 0 25px;
+}
+
+.section-title {
+    text-align: center;
+
+    font-size: 30px;
+
+    color: var(--pink-dark);
+
+    font-weight: 800;
+
+    margin-bottom: 35px;
+}
+
+.section-title::before {
+    content: "🌸 ";
+}
+
+.section-title::after {
+    content: " 🌸";
+}
+
+
+/* =========================
+   🧁 PRODUCT GRID
+========================= */
+
+#products-container,
+.cards,
+.card-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+    width: 100%;
+}
+
+
+/* =========================
+   🍰 PRODUCT CARD
+========================= */
+
+.card {
+    position: relative;
+
+    background: white;
+
+    border-radius: 25px;
+
+    padding: 18px;
+
+    border: 3px solid #ffe1e9;
+
+    box-shadow: var(--shadow);
+
+    overflow: hidden;
+
+    transition: 0.3s ease;
+}
+
+.card::before {
+    content: "♡";
+
+    position: absolute;
+
+    top: 10px;
+    right: 15px;
+
+    font-size: 25px;
+
+    color: var(--pink);
+
+    z-index: 2;
+}
+
+.card:hover {
+    transform: translateY(-8px) rotate(0.5deg);
+
+    border-color: #ffb6c8;
+
+    box-shadow: var(--shadow-hover);
+}
+
+
+/* =========================
+   🖼 PRODUCT IMAGE
+========================= */
+
+.card-image {
+    width: 100%;
+    height: 210px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    margin-bottom: 15px;
+
+    background: var(--yellow-light);
+
+    position: relative;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.4s ease;
+}
+
+.card:hover .card-image img {
+    transform: scale(1.06);
+}
+
+.card-image.no-image {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: var(--orange-dark);
+
+    font-size: 15px;
+}
+
+
+/* =========================
+   🏷 PRODUCT HEADER
+========================= */
+
+.card-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 10px;
+
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    color: #665050;
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    margin: 0;
+}
+
+
+/* =========================
+   🌼 CATEGORY
+========================= */
+
+.category-badge {
+    padding: 5px 11px;
+
+    background: var(--yellow-light);
+
+    color: #d58b00;
+
+    border: 1px solid #ffd166;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* =========================
+   📝 PRODUCT INFO
+========================= */
+
+.card p,
+.producer,
+.contact {
+    color: var(--text-light);
+
+    font-size: 14px;
+
+    margin: 6px 0;
+}
+
+.producer::before {
+    content: "🌱 ";
+}
+
+.contact::before {
+    content: "📞 ";
+}
+
+
+/* =========================
+   💰 PRICE
+========================= */
+
+.card .price,
+.price {
+    display: inline-block;
+
+    color: var(--pink-dark);
+
+    background: var(--pink-light);
+
+    padding: 6px 12px;
+
+    border-radius: 15px;
+
+    font-size: 20px;
+
+    font-weight: 800;
+
+    margin-top: 10px;
+}
+
+
+/* =========================
+   🎀 CARD FOOTER
+========================= */
+
+.card-footer {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 15px;
+}
+
+.card-actions {
+    display: flex;
+
+    gap: 6px;
+}
+
+
+/* =========================
+   ✏️ EDIT BUTTON
+========================= */
+
+.edit-btn {
+    padding: 7px 12px;
+
+    background: var(--purple);
+
+    color: white;
+
+    border: none;
+
+    border-radius: 15px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition: 0.2s;
+}
+
+.edit-btn:hover {
+    background: #987eea;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   🗑 DELETE BUTTON
+========================= */
+
+.delete-btn {
+    padding: 7px 12px;
+
+    background: #ff8a8a;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 15px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition: 0.2s;
+}
+
+.delete-btn:hover {
+    background: #f05f5f;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   🧁 ADD PRODUCT FORM
+========================= */
+
+.add-form-section {
+    max-width: 900px;
+
+    margin: 40px auto;
+
+    padding: 30px;
+
+    background: white;
+
+    border: 3px solid #ffe1e9;
+
+    border-radius: 30px;
+
+    box-shadow: var(--shadow);
+}
+
+.add-form-section .section-title {
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   📝 FORM
+========================= */
+
+.add-form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 15px;
+
+    font-weight: 700;
+
+    color: #665050;
+}
+
+.form-row {
+    display: flex;
+
+    gap: 15px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+
+/* =========================
+   ✏️ INPUT
+========================= */
+
+.form-group input,
+.form-group select {
+    width: 100%;
+
+    height: 45px;
+
+    padding: 8px 14px;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    color: var(--text);
+
+    background: #fffafa;
+
+    border: 2px solid #ffdce6;
+
+    border-radius: 15px;
+
+    outline: none;
+
+    transition: 0.2s;
+}
+
+.form-group input::placeholder {
+    color: #b8aaaa;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--pink);
+
+    background: white;
+
+    box-shadow: 0 0 0 4px rgba(255, 143, 171, 0.12);
+}
+
+
+/* =========================
+   🌸 SUBMIT BUTTON
+========================= */
+
+.submit-btn {
+    width: 100%;
+
+    height: 48px;
+
+    border: none;
+
+    border-radius: 20px;
+
+    background: linear-gradient(
+        135deg,
+        #ff8fab,
+        #ff9f68
+    );
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 15px rgba(255, 143, 171, 0.25);
+
+    transition: 0.25s;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 20px rgba(255, 143, 171, 0.35);
+}
+
+
+/* =========================
+   🦋 MODAL
+========================= */
+
+.modal-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(70, 40, 50, 0.45);
+
+    backdrop-filter: blur(5px);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 1000;
+
+    padding: 20px;
+}
+
+.modal-overlay.hidden {
+    display: none;
+}
+
+.modal {
+    background: white;
+
+    border-radius: 30px;
+
+    max-width: 600px;
+
+    width: 100%;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    padding: 30px;
+
+    border: 3px solid #ffe1e9;
+
+    box-shadow: 0 20px 50px rgba(80, 40, 50, 0.2);
+
+    animation: modalPop 0.25s ease;
+}
+
+@keyframes modalPop {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* =========================
+   🎀 MODAL HEADER
+========================= */
+
+.modal-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.modal-header h2 {
+    color: var(--pink-dark);
+
+    margin: 0;
+
+    font-size: 24px;
+}
+
+.modal-close {
+    background: var(--pink-light);
+
+    border: none;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    color: var(--pink-dark);
+
+    padding: 5px 10px;
+
+    border-radius: 50%;
+
+    transition: 0.2s;
+}
+
+.modal-close:hover {
+    background: var(--pink);
+
+    color: white;
+
+    transform: rotate(90deg);
+}
+
+
+/* =========================
+   ✏️ EDIT FORM
+========================= */
+
+.edit-form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.modal-footer {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 15px;
+}
+
+.modal-footer button {
+    flex: 1;
+}
+
+
+/* =========================
+   ❌ CANCEL BUTTON
+========================= */
+
+.cancel-btn {
+    padding: 12px;
+
+    background: white;
+
+    color: var(--pink-dark);
+
+    border: 2px solid #ffb6c8;
+
+    border-radius: 18px;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.cancel-btn:hover {
+    background: var(--pink-light);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   🌈 FOOTER
+========================= */
+
+.footer {
+    background: linear-gradient(
+        135deg,
+        #ff8fab,
+        #b8a0ff
+    );
+
+    color: white;
+
+    padding: 45px 30px 20px;
+
+    margin-top: 60px;
+}
+
+.footer-inner {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+}
+
+.footer h4 {
+    color: white;
+
+    font-size: 18px;
+
+    margin-bottom: 10px;
+}
+
+.footer p {
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+.footer a {
+    color: white;
+
+    transition: 0.2s;
+}
+
+.footer a:hover {
+    color: var(--yellow-light);
+}
+
+.copyright {
+    text-align: center;
+
+    margin-top: 30px;
+
+    padding-top: 15px;
+
+    border-top: 1px solid rgba(255,255,255,0.3);
+
+    font-size: 13px;
+
+    opacity: 0.9;
+}
+
+
+/* =========================
+   📱 RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    #products-container,
+    .cards,
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero {
+        gap: 25px;
+    }
+
+    .hero-text h1 {
+        font-size: 34px;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 15px 20px;
+
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 5px;
+    }
+
+    .hero {
+        flex-direction: column;
+
+        padding: 0 20px;
+
+        margin-top: 25px;
+
+        gap: 25px;
+    }
+
+    .hero-img {
+        width: 100%;
+
+        height: 300px;
+
+        border-radius: 25px;
+    }
+
+    .hero-text {
+        width: 100%;
+
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 30px;
+    }
+
+    .hero-text p {
+        font-size: 15px;
+    }
+
+    .cards-section {
+        padding: 0 15px;
+    }
+
+    .add-form-section {
+        margin: 30px 15px;
+
+        padding: 22px;
+    }
+
+    .footer-inner {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    #products-container,
+    .cards,
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        flex-direction: column;
+
+        gap: 0;
+    }
+
+    .card {
+        border-radius: 22px;
+    }
+
+    .card-footer {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .card-actions {
+        width: 100%;
+    }
+
+    .edit-btn,
+    .delete-btn {
+        flex: 1;
+    }
+
+    .section-title {
+        font-size: 25px;
+    }
+
+    .modal {
+        padding: 20px;
+
+        border-radius: 25px;
+    }
+}
+
